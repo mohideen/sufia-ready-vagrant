@@ -22,7 +22,7 @@ echo "Installing Message Consumer..."
 wget -q http://repo1.maven.org/maven2/org/fcrepo/fcrepo-message-consumer-webapp/4.0.0/fcrepo-message-consumer-webapp-4.0.0.war -O /usr/share/tomcat/webapps/fcrepo-message-consumer.war
 
 echo "Setting JAVA_OPTS..."
-grep -q -F 'JAVA_OPTS="-Dfcrepo.home=/var/fedora4/fedora-data -Dsolr.solr.home=/var/solr -DsolrIndexer.port=8080"' /etc/tomcat/tomcat.conf || echo 'JAVA_OPTS="-Dfcrepo.home=/var/fedora4/fedora-data -Dsolr.solr.home=/var/solr -DsolrIndexer.port=8080"' >> /etc/tomcat/tomcat.conf
+grep -q -F 'JAVA_OPTS="-Dfcrepo.home=/var/fedora4/fedora-data -Dsolr.solr.home=/var/solr"' /etc/tomcat/tomcat.conf || echo 'JAVA_OPTS="-Dfcrepo.home=/var/fedora4/fedora-data -Dsolr.solr.home=/var/solr"' >> /etc/tomcat/tomcat.conf
 
 systemctl enable tomcat.service
 systemctl start tomcat.service
