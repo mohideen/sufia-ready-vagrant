@@ -32,8 +32,17 @@ wget -q http://www.apache.org/dist/jena/binaries/jena-fuseki-1.1.1-distribution.
 tar xvfz /home/vagrant/jena-fuseki-1.1.1-distribution.tar.gz
 cd /home/vagrant/jena-fuseki-1.1.1/
 mkdir -p /var/fuseki
-chown -R tomcat:tomcat /var/fuseki
-nohup ./fuseki-server --loc /var/fuseki  /fcrepo &
+chown -R vagrant:vagrant /var/fuseki
+nohup ./fuseki-server --update --loc /var/fuseki  /fcrepo &
+
+while [ ! -f /usr/share/tomcat/webapps/fcrepo-message-consumer/WEB-INF/classes/spring/indexer-core.xml ]
+do
+  sleep 2
+done
+yes | cp /vagrant/indexer-core.xml /usr/share/tomcat/webapps/fcrepo-message-consumer/WEB-INF/classes/spring/indexer-core.xml
+chown tomcat:tomcat /usr/share/tomcat/webapps/fcrepo-message-consumer/WEB-INF/classes/spring/indexer-core.xml
+
+systemctl restart tomcat.service
 
 sleep 20
 

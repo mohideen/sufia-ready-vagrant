@@ -18,10 +18,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
  
   config.vm.hostname = "sufia-ready"
   
+  # Main web server
   config.vm.network "forwarded_port", guest: 80, host: 38000
 
+  # Tomcat
   config.vm.network "forwarded_port", guest: 8080, host: 38080
 
+  #Fuseki
   config.vm.network "forwarded_port", guest: 3030, host: 33030 
 
   config.vm.provision :shell, :path => "upgrade.sh"
