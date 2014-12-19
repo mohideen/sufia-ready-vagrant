@@ -14,6 +14,8 @@ tar xvf /tmp/solr.tar.gz -C /tmp
 cp /tmp/solr-4.10.2/example/lib/ext/* /usr/share/tomcat/lib/
 mkdir -p /var/solr
 cp -R /tmp/solr-4.10.2/example/solr/* /var/solr
+cp -R /tmp/solr-4.10.2/contrib /var/solr
+cp -R /tmp/solr-4.10.2/dist /var/solr
 cp /vagrant/solrconfig.xml /var/solr/collection1/conf/solrconfig.xml
 chown -R tomcat:tomcat /var/solr
 cp /tmp/solr-4.10.2/dist/solr-4.10.2.war /usr/share/tomcat/webapps/solr.war
