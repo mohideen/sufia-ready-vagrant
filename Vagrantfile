@@ -43,4 +43,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision :shell, :path => "imagemagick.sh"
 
+  config.vm.provision :shell, :path => "fits.sh"
+
 end
