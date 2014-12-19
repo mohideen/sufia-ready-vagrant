@@ -5,5 +5,5 @@ PREFIX indexing: <http://fedora.info/definitions/v4/indexing#>
 DELETE { }
 INSERT {
   <> indexing:hasIndexingTransformation "default";
-  <> rdf:type indexing:indexable .}
+  rdf:type indexing:indexable .}
 WHERE { }
