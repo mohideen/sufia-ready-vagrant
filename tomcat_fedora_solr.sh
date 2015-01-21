@@ -17,8 +17,11 @@ cp -R /tmp/solr-4.10.2/example/solr/* /var/solr
 cp -R /tmp/solr-4.10.2/contrib /var/solr
 cp -R /tmp/solr-4.10.2/dist /var/solr
 cp /vagrant/solrconfig.xml /var/solr/collection1/conf/solrconfig.xml
+cp /vagrant/schema.xml /var/solr/collection1/conf/schema.xml
 chown -R tomcat:tomcat /var/solr
 cp /tmp/solr-4.10.2/dist/solr-4.10.2.war /usr/share/tomcat/webapps/solr.war
+
+
 
 echo "Installing Message Consumer..."
 wget -q http://repo1.maven.org/maven2/org/fcrepo/fcrepo-message-consumer-webapp/4.0.0/fcrepo-message-consumer-webapp-4.0.0.war -O /usr/share/tomcat/webapps/fcrepo-message-consumer.war
