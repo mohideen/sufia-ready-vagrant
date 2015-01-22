@@ -35,9 +35,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision :shell, :path => "git.sh"
 
-  config.vm.provision :shell, :path => "ruby.sh"
-
   config.vm.provision :shell, :path => "redis.sh"
+
+  config.vm.provision :shell, :path => "ruby.sh"
 
   config.vm.provision :shell, :path => "tomcat_fedora_solr.sh"
 
