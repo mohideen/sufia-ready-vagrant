@@ -1,0 +1,15 @@
+development:
+  user: fcrepoAdmin
+  password: fcrepoAdmin
+  url: http://localhost:8080/fcrepo/rest
+  base_path: /mohamed-test/sufia-dev
+test:
+  user: fcrepoAdmin
+  password: fcrepoAdmin
+  url: http://localhost:8080/fcrepo/rest
+  base_path: /mohamed-test/sufia-test
+production:
+  user: fcrepoAdmin
+  password: fcrepoAdmin
+  url: http://localhost:8080/fcrepo/rest
+  base_path: /mohamed-test/sufia

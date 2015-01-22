@@ -20,6 +20,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   
   # Main web server
   config.vm.network "forwarded_port", guest: 80, host: 38000
+  
+  # Rails server
+  config.vm.network "forwarded_port", guest: 3000, host: 33000
 
   # Tomcat
   config.vm.network "forwarded_port", guest: 8080, host: 38080
@@ -44,5 +47,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision :shell, :path => "imagemagick.sh"
 
   config.vm.provision :shell, :path => "fits.sh"
+
+  #config.vm.provision :shell, :privileged => false, :path => "sufia/setup.sh"
+
+  #config.vm.provision :shell, :privileged => false, :path => "sufia/start.sh"
+
 
 end

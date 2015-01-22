@@ -13,10 +13,13 @@ Components installed:
 - Ruby
 - Fuseki
 - Fits
+- Sufia
 
 Uses port forwarding:
 
 [http://localhost:38000](http://localhost:38000) -> Port 80 
+
+[http://localhost:33000](http://localhost:33000) -> Port 3000 (Rails Server) 
 
 [http://localhost:38080/solr](http://localhost:38080/solr) -> Solr
 
@@ -29,7 +32,9 @@ Fits is installed under `/opt/fits`. Solr and Fuseki should index the Fedora 4 r
 
 ------
 
- TODO: Complete instructions on how to install a working Sufia in this vagrant box.  
+ TODO: 
+  * Make vagrant provisioner install and start sufia
+  * Create separate solr cores for dev, test, and production and update solr.yml.
 
 ------
 
@@ -64,6 +69,11 @@ If you don't have Vagrant installed, here's how to remedy that:
 On Windows, you can also use [github for windows](https://windows.github.com/) and run vagrant from within the git shell.  
 
 > `vagrant up` will take some time to complete the first time you launch it -- **no, really, maybe grab a cup of coffee and wait for this to complete!** 
+
+### Setup and start Sufia
+
+After `vagrant up` completes, ssh into the vagrant machine and run `/vagrant/sufia/setup.sh` and `/vagrant/sufia/start.sh` to get sufia installed and started on port 3000. 
+
 
 
 
