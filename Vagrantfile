@@ -11,9 +11,25 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "chef/centos-7.0"
+  
+  config.ssh.pty = true
 
   config.vm.provider "virtualbox" do |v|
     v.memory = 2048
+  end
+
+  config.vm.provider :aws do |aws, override|
+    # Dummy Box 
+    override.vm.box = "dummy"
+    aws.keypair_name = ENV['AWS_KEYPAIR_NAME']
+    override.ssh.private_key_path = ENV['AWS_PRIVATE_KEY_PATH']
+    aws.security_groups = ENV['AWS_SECURITY_GROUPS']
+    aws.instance_type = "m1.medium"
+    aws.ami = "ami-e6ad348e"
+    override.ssh.username = "ec2-user"
+    aws.tags = {
+      'Name' => 'Sufia Centos 7',
+     }
   end
  
   config.vm.hostname = "sufia-ready"

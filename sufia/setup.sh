@@ -3,7 +3,8 @@
 echo "Installing sufia..."
 
 sudo mkdir /apps
-sudo chown vagrant:vagrant /apps
+user=$(whoami)
+sudo chown $user:$user /apps
 cd /apps
 rails new sufia
 cd sufia

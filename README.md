@@ -70,6 +70,15 @@ On Windows, you can also use [github for windows](https://windows.github.com/) a
 
 > `vagrant up` will take some time to complete the first time you launch it -- **no, really, maybe grab a cup of coffee and wait for this to complete!** 
 
+### Run sufia-ready-vagrant on AWS (Alternative to previous step)
+	$ vagrant up --provider=aws
+You need to have your AWS credentials and configuration information exported to your environment for this to work.
+	export AWS_ACCESS_KEY=“XXXXXXXXXXXXXXXXXX"
+	export AWS_SECRET_KEY=“XXXXXXXXXXXXXXXXXXX”
+	export AWS_KEYPAIR_NAME=“XXXXXXXXXXXXXXXXXX"
+	export AWS_PRIVATE_KEY_PATH=“XXXXXXXXXXXXXXX”
+	export SUFIA_AWS_SECURITY_GROUPS=“XXXXXXXXXXXXXXXXXX"
+
 ### Setup and start Sufia
 
 After `vagrant up` completes, ssh into the vagrant machine and run `/vagrant/sufia/setup.sh` and `/vagrant/sufia/start.sh` to get sufia installed and started on port 3000. 
