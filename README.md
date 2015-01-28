@@ -73,6 +73,7 @@ On Windows, you can also use [github for windows](https://windows.github.com/) a
 ### Run sufia-ready-vagrant on AWS (Alternative to previous step)
 	$ vagrant up --provider=aws
 You need to have your AWS credentials and configuration information exported to your environment for this to work.
+
 	export AWS_ACCESS_KEY=“XXXXXXXXXXXXXXXXXX"
 	export AWS_SECRET_KEY=“XXXXXXXXXXXXXXXXXXX”
 	export AWS_KEYPAIR_NAME=“XXXXXXXXXXXXXXXXXX"
